@@ -13,12 +13,15 @@ appid = os.environ['appid']
 @app.command("city")
 def get_city(city_name: str):
 
-    request = requests.get(
-        "https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}")
+    try:
+        request = requests.get(
+            "https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}")
 
-    response = request.json()
+        response = request.json()
 
-    typer.echo(f"{request}")
+        typer.echo(f"{request}")
+    except:
+        typer.echo(f"Could not find city")
 
 
 if __name__ == "__main__":
