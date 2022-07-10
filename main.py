@@ -14,12 +14,18 @@ appid = os.environ['appid']
 def get_city(city_name: str):
 
     try:
-        request = requests.get(
-            f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}")
+        url = "https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}"
+
+        request = requests.get(f"{url}")
+
+        print(request)
 
         response = request.json()
 
-        typer.echo(f"{request}")
+        typer.echo(f"City: {response['name']}")
+        typer.echo(f"Country: {response['sys']['country']}")
+        typer.echo(f"Outlook: {response['weather'][0]['main']}")
+        typer.echo(f"Description: {response['weather'][0]['description']}")
     except:
         typer.echo(f"Could not find city")
 
