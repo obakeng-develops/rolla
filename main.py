@@ -16,7 +16,7 @@ def get_city(city_name: str):
     try:
         url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}"
 
-        request = requests.get(f"{url}")
+        request = requests.get(url)
 
         print(request)
 
