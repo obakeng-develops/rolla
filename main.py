@@ -27,6 +27,7 @@ def get_city(city_name: str, extra: bool = typer.Option(None, "--extra", "-e", h
 
         if extra:
             typer.echo(f"City: {response['name']}")
+            typer.echo(f"Temperature: {temp}")
             typer.echo(f"Country: {response['sys']['country']}")
             typer.echo(f"Outlook: {response['weather'][0]['main']}")
             typer.echo(f"Description: {response['weather'][0]['description']}")
