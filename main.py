@@ -29,7 +29,6 @@ def get_city(city_name: str):
         typer.echo(f"Country: {response['sys']['country']}")
         typer.echo(f"Outlook: {response['weather'][0]['main']}")
         typer.echo(f"Description: {response['weather'][0]['description']}")
-        typer.echo(f"Sunrise: {sunrise}")
     except:
         typer.echo(f"Could not find city")
 
