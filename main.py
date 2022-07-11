@@ -24,12 +24,17 @@ def get_city(city_name: str, extra: bool = typer.Option(None, "--extra", "-e", h
         sunrise = datetime.fromtimestamp(response['sys']['sunrise'])
         sunset = datetime.fromtimestamp(response['sys']['sunset'])
 
-        typer.echo(f"City: {response['name']}")
-        typer.echo(f"Country: {response['sys']['country']}")
-        typer.echo(f"Outlook: {response['weather'][0]['main']}")
-        typer.echo(f"Description: {response['weather'][0]['description']}")
-        typer.echo(f"Sunrise: {sunrise}")
-        typer.echo(f"Sunset: {sunset}")
+        if extra:
+            typer.echo(f"City: {response['name']}")
+            typer.echo(f"Country: {response['sys']['country']}")
+            typer.echo(f"Outlook: {response['weather'][0]['main']}")
+            typer.echo(f"Description: {response['weather'][0]['description']}")
+            typer.echo(f"Sunrise: {sunrise}")
+            typer.echo(f"Sunset: {sunset}")
+        else:
+            typer.echo(f"City: {response['name']}")
+            typer.echo(f"Outlook: {response['weather'][0]['main']}")
+            typer.echo(f"Description: {response['weather'][0]['description']}")
     except:
         typer.echo(f"Could not find city")
 
