@@ -23,7 +23,7 @@ def get_city(city_name: str):
 
         response = request.json()
 
-        sunrise = datetime.fromtimestamp(f"{response['sys']['sunrise']}")
+        sunrise = datetime.fromtimestamp(response['sys']['sunrise'])
 
         typer.echo(f"City: {response['name']}")
         typer.echo(f"Country: {response['sys']['country']}")
