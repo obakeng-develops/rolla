@@ -14,7 +14,7 @@ appid = os.environ['appid']
 def get_city(city_name: str):
 
     try:
-        url = "https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={appid}"
 
         request = requests.get(f"{url}")
 
