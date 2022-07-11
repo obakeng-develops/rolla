@@ -19,8 +19,6 @@ def get_city(city_name: str):
 
         request = requests.get(url)
 
-        print(request)
-
         response = request.json()
 
         sunrise = datetime.fromtimestamp(response['sys']['sunrise'])
