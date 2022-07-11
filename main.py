@@ -23,6 +23,7 @@ def get_city(city_name: str, extra: bool = typer.Option(None, "--extra", "-e", h
 
         sunrise = datetime.fromtimestamp(response['sys']['sunrise'])
         sunset = datetime.fromtimestamp(response['sys']['sunset'])
+        temp = response['main']['temp']
 
         if extra:
             typer.echo(f"City: {response['name']}")
