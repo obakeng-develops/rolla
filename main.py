@@ -24,12 +24,14 @@ def get_city(city_name: str):
         response = request.json()
 
         sunrise = datetime.fromtimestamp(response['sys']['sunrise'])
+        sunset = datetime.fromtimestamp(response['sys']['sunset'])
 
         typer.echo(f"City: {response['name']}")
         typer.echo(f"Country: {response['sys']['country']}")
         typer.echo(f"Outlook: {response['weather'][0]['main']}")
         typer.echo(f"Description: {response['weather'][0]['description']}")
         typer.echo(f"Sunrise: {sunrise}")
+        typer.echo(f"Sunset: {sunset}")
     except:
         typer.echo(f"Could not find city")
 
