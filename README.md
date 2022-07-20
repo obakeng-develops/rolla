@@ -4,9 +4,9 @@ The CLI application that allows you query weather data for cities all over the w
 
 ## Roadmap
 
-[] Cache weather data
-[] Weather forecast
-[] Automate weather forecast in any notification channel you want. (Email, SMS, Slack)
+- [] Cache weather data
+- [] Weather forecast
+- [] Automate weather forecast in any notification channel you want. (Email, SMS, Slack)
 
 ## Usage
 
@@ -43,5 +43,6 @@ After you install dependencies, you can now run the project with this command (v
 - `typer main.py run Mumbai`
 
 And you'll receive back information like below:
+![rollaCLi](https://user-images.githubusercontent.com/60041842/179912932-3f55437a-be4a-45e3-8cf2-a5c5ebcce918.jpg)
 
 You can also retrieve extra information (like country, sunrise/sunset time) with `-e` or `--extra` flag.
